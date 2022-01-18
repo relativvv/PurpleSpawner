@@ -1,0 +1,11 @@
+de\relativv\purplespawner\commands\ReloadConfig.class
+de\relativv\purplespawner\utils\ItemBuilder.class
+de\relativv\purplespawner\main\PurpleSpawner.class
+de\relativv\purplespawner\listeners\BlockPlace.class
+de\relativv\purplespawner\listeners\BlockBreak.class
+de\relativv\purplespawner\listeners\PlayerInteract$1.class
+de\relativv\purplespawner\listeners\PrepareAnvil.class
+de\relativv\purplespawner\listeners\PlayerInteract$2.class
+de\relativv\purplespawner\listeners\PlayerInteract.class
+de\relativv\purplespawner\commands\SpawnerGive.class
+de\relativv\purplespawner\utils\FileManager.class

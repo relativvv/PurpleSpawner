@@ -1,0 +1,10 @@
+name: PurpleSpawner
+version: '1.0.0'
+main: de.relativv.purplespawner.main.PurpleSpawner
+api-version: 1.17
+authors: [ relativv ]
+description: A custom spawner plugin
+
+commands:
+  spawnergive:
+    description: Give customized spawners
