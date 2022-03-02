@@ -1,5 +1,6 @@
 package de.relativv.purplespawner.main;
 
+import de.relativv.purplespawner.commands.ReloadConfig;
 import de.relativv.purplespawner.commands.SpawnerGive;
 import de.relativv.purplespawner.listeners.BlockBreak;
 import de.relativv.purplespawner.listeners.PrepareAnvil;
@@ -58,6 +59,7 @@ public final class PurpleSpawner extends JavaPlugin {
         this.cs = Bukkit.getConsoleSender();
 
         this.getCommand("spawnergive").setExecutor(new SpawnerGive(this));
+        this.getCommand("purplespawner").setExecutor(new ReloadConfig(this));
 
         this.pm.registerEvents(new BlockPlace(this), this);
         this.pm.registerEvents(new BlockBreak(this), this);

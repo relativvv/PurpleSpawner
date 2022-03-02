@@ -21,11 +21,11 @@ public class PlayerInteract implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         Player p = e.getPlayer();
-            if(e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                if(e.getClickedBlock() != null) {
-                    if(e.getClickedBlock().getType() == Material.SPAWNER) {
+        if(e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if(e.getClickedBlock() != null) {
+                if(e.getClickedBlock().getType() == Material.SPAWNER) {
                     if(p.getInventory().getItemInMainHand().getType() == Material.AXOLOTL_SPAWN_EGG
-                        || p.getInventory().getItemInMainHand().getType() == Material.BAT_SPAWN_EGG
+                            || p.getInventory().getItemInMainHand().getType() == Material.BAT_SPAWN_EGG
                             || p.getInventory().getItemInMainHand().getType() == Material.BEE_SPAWN_EGG
                             || p.getInventory().getItemInMainHand().getType() == Material.BLAZE_SPAWN_EGG
                             || p.getInventory().getItemInMainHand().getType() == Material.CAT_SPAWN_EGG

@@ -8,3 +8,5 @@ description: A custom spawner plugin
 commands:
   spawnergive:
     description: Give customized spawners
+  purplespawner:
+    description: Reload the config

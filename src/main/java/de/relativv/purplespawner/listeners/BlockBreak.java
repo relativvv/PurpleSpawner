@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class BlockBreak implements Listener {
@@ -48,7 +49,14 @@ public class BlockBreak implements Listener {
                                         .build();
 
                                 e.setCancelled(false);
-                                e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), toDrop);
+
+                                if(!hasAvailableSlot(p.getInventory())) {
+                                    p.getWorld().dropItemNaturally(e.getBlock().getLocation(), toDrop);
+                                    return;
+                                }
+
+                                p.getInventory().addItem(toDrop);
+
                             } else {
                                 p.sendMessage(PurpleSpawner.pr + this.purpleSpawner.fileManager.getTranslation("messages.mineNoPermission"));
                                 e.setCancelled(true);
@@ -73,5 +81,17 @@ public class BlockBreak implements Listener {
             result.append(splices[i].substring(0, 1).toUpperCase()).append(splices[i].substring(1).toLowerCase()).append(" ");
         }
         return result.toString();
+    }
+
+    private boolean hasAvailableSlot(Inventory inv) {
+        boolean check = false;
+        for (ItemStack item: inv.getContents()) {
+            if(item == null) {
+                check = true;
+                break;
+            }
+        }
+
+        return check;
     }
 }

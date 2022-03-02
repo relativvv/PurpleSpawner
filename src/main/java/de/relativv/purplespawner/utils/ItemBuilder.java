@@ -12,30 +12,30 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.util.Arrays;
 
 public class ItemBuilder {
- 
+
 	public ItemStack item;
-	
-	
+
+
 	public ItemBuilder(Material item) {
 		this.item = new ItemStack(item);
 	}
-	
+
 	public ItemBuilder(Material item, int amount) {
 		this.item = new ItemStack(item, amount);
 	}
-	
+
 	public ItemBuilder(Material item, int amount, short data) {
 		this.item = new ItemStack(item, amount, data);
 	}
-	
+
 	public ItemBuilder setDisPlayname(String name) {
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
 		item.setItemMeta(meta);
-		
+
 		return this;
-	}	
-		
+	}
+
 	public ItemBuilder setAmount(int amount) {
 		item.setAmount(amount);
 		return this;
@@ -45,24 +45,24 @@ public class ItemBuilder {
 		item.setDurability(durability);
 		return this;
 	}
-	
+
 	public ItemBuilder setLore(String... lore) {
 		ItemMeta meta = item.getItemMeta();
 		meta.setLore(Arrays.asList(lore));
 		item.setItemMeta(meta);
 		return this;
 	}
-	
+
 	public ItemBuilder addEnchantment(Enchantment ench, int lvl) {
 		item.addEnchantment(ench, lvl);
 		return this;
 	}
-	
+
 	public ItemBuilder addUnsafeEnchantment(Enchantment ench, int lvl) {
 		item.addUnsafeEnchantment(ench, lvl);
 		return this;
 	}
-	
+
 	public ItemBuilder setSkullOwner(String owner) {
 		SkullMeta meta = (SkullMeta) item.getItemMeta();
 		meta.setOwner(owner);
@@ -76,7 +76,7 @@ public class ItemBuilder {
 		item.setItemMeta(meta);
 		return this;
 	}
-	
+
 	public ItemBuilder setColorRGB(int red, int green, int blue) {
 		LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
 		meta.setColor(Color.fromRGB(red, green, blue));
